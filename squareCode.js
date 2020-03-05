@@ -1,5 +1,17 @@
 const squareCode = function(message) {
-  // Put your solution here
+  const noSpaces = message.replace(/ /g, "");
+  const sideLength = Math.ceil(Math.sqrt(noSpaces.length));
+
+  let result = "";
+
+  for (let j = 0; j < sideLength; j++) {
+    for (let i = j; i < noSpaces.length; i = i + sideLength) {
+      result += noSpaces[i];
+    }
+    result += " ";
+  }
+  
+  return result;
 };
 
 console.log(squareCode("chill out"));
